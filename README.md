@@ -1,6 +1,6 @@
-# kater
+# katerebedeva.com
 
-> katerlebedeva portfolio
+> Katya Lebedeva portfolio
 
 ## Build Setup
 
@@ -20,3 +20,10 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+## Deploy
+
+``` bash
+npm run generate
+npm run deploy
+```
