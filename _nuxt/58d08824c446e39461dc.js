@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{567:function(t,n,s){"use strict";s.r(n);var e=s(8),i=Object(e.a)({},function(){var t=this.$createElement,n=this._self._c||t;return n("div",[n("h1",[this._v("\n    "+this._s(this.$t("Contacts"))+"\n  ")])])},[],!1,null,null,null);i.options.__file="contacts.vue";n.default=i.exports}}]);
