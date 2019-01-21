@@ -1,0 +1,24 @@
+@import "variables";
+@import "math";
+
+@function vr-fs($base-font-size, $scale, $power) {
+  @return $base-font-size * pow($scale, $power);
+}
+
+@function vr-lh($font-size, $vr-step) {
+  @return  (floor($font-size / $vr-step) + 1) * $vr-step;
+}
+
+@mixin for-size($range) {
+  @if $range == $phone-only {
+    @media (max-width: #{$upper-boundary-phone - 1}) { @content; }
+  } @else if $range == $tablet-portrait-up {
+    @media (min-width: $upper-boundary-phone) { @content; }
+  } @else if $range == $tablet-landscape-up {
+    @media (min-width: $upper-boundary-tablet-portrait) { @content; }
+  } @else if $range == $desktop-up {
+    @media (min-width: $upper-boundary-tablet-landscape) { @content; }
+  } @else if $range == $big-desktop-up {
+    @media (min-width: $upper-boundary-desktop) { @content; }
+  }
+}

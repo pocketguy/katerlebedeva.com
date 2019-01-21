@@ -1,0 +1,98 @@
+@import "variables";
+@import "mixins";
+
+
+@each $breakpoint, $type-scale in $responsive-type-scale {
+  @include for-size($breakpoint) {
+    $font-size: map_get($type-scale, font-size);
+    $scale: map_get($type-scale, scale);
+    @for $i from 1 to 7 {
+      h#{$i}, .h#{$i} {
+        $fs: vr-fs($font-size, $scale, 5 - $i);
+        $lh: vr-lh($fs, $vr-step);
+        font-size: $fs;
+        line-height: $lh;
+        &:not(:first-child) {
+          margin-top: $lh;
+        }
+        font-family: $font-family-headers;
+        font-weight: 700
+      }
+    }
+    $fs: vr-fs($font-size, $scale, 0);
+    $lh: vr-lh($fs, $vr-step);
+    body {
+      font-size: $fs;
+      line-height: $lh;
+    }
+    html {
+      font-size: $lh;
+    }
+  }
+}
+
+body {
+  font-family: $font-family-body;
+  color: $color-text;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-headers
+}
+
+
+p, ul, ol, dl, pre, blockquote {
+  &:not(:first-child) {
+    margin-top: 1rem;
+  }
+}
+
+article:not(first-child) {
+  &:not(:first-child) {
+    margin-top: 4rem;
+  }
+}
+
+b, strong {
+  font-weight: 600;
+  color: $color-headers
+}
+
+ol {
+  list-style: decimal;
+
+  li {
+    margin-left: 2rem;
+  }
+}
+
+ul {
+  list-style: disc;
+
+  li {
+    margin-left: 2rem;
+  }
+}
+
+blockquote {
+  padding: 1rem;
+  border-left: 2px solid black;
+}
+
+
+i, em, dl dt dfn {
+  font-style: italic;
+}
+
+dl dd {
+  margin-left: 1rem;
+}
+
+a {
+  color: $color-headers;
+  text-decoration: none;
+  text-decoration-color: $color-accent;
+  &:hover {
+    color: $color-accent;
+  }
+}

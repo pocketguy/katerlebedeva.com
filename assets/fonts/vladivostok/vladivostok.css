@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Vladivostok';
+    src: local('Vladivostok Regular'),
+         local('Vladivostok-Regular'),
+         url('./Vladivostok-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
