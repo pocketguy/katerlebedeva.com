@@ -92,6 +92,7 @@ module.exports = {
 
   generate: {
     fallback: "404.html",
+    subFolders: false,
     routes: routes
   },
 

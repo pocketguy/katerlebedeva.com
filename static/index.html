@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function include(arr,obj) {
+        return (arr.indexOf(obj) != -1);
+      }
+      var langs = ['en', 'ru'];
+      var defaultLang = 'en';
+      var hrefparts = window.location.href.split('/');
+      var lang = navigator.language || navigator.browserLanguage;
+      lang = lang.split('-')[0];
+      if (include(langs, lang)) {
+        hrefparts.splice(3, 0, lang)
+      } else {
+        hrefparts.splice(3, 0, defaultLang)
+      }
+      window.location.replace(hrefparts.join('/'))
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/en">English</a></li>
+      <li><a href="/ru">Русский</a></li>
+    </ul>
+  </body>
+</html>
