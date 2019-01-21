@@ -9,7 +9,7 @@
       }
       var langs = ['en', 'ru'];
       var defaultLang = 'en';
-      var hrefparts = window.location.href.split('/');
+      var hrefparts = window.location.href.replace(/\/$/, "").split('/');
       var lang = navigator.language || navigator.browserLanguage;
       lang = lang.split('-')[0];
       if (include(langs, lang)) {
