@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@nuxtjs/pwa": "^2.6.0",
@@ -23,13 +24,10 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "concurrent-transform": "^1.0.0",
     "eslint": "^5.0.1",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^5.0.0",
-    "gulp": "^4.0.0",
-    "gulp-awspublish": "^4.0.0",
-    "gulp-cloudfront-invalidate-aws-publish": "^1.0.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "push-dir": "^0.4.1"
   }
 }
