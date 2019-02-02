@@ -10,7 +10,7 @@
         class="grid-item"
       >
         <MyImage
-          fillParent
+          fill-parent
           :src="block.project.cover || ''"
           :title="block.project.title"
           :to="localePath({name: 'projects-slug', params: {slug: block.slug}})"
@@ -46,7 +46,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import '~assets/scss/imports.scss';
+  @import '~/assets/scss/_imports.scss';
 
   .subheader {
     margin-top: 0;

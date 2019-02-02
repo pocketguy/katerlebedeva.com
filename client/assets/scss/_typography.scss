@@ -7,7 +7,7 @@
     $font-size: map_get($type-scale, font-size);
     $scale: map_get($type-scale, scale);
     @for $i from 1 to 7 {
-      h#{$i}, .h#{$i} {
+      h#{$i}, .h#{$i}, .fs-#{$i} {
         $fs: vr-fs($font-size, $scale, 5 - $i);
         $lh: vr-lh($fs, $vr-step);
         font-size: $fs;
@@ -15,8 +15,6 @@
         &:not(:first-child) {
           margin-top: $lh;
         }
-        font-family: $font-family-headers;
-        font-weight: 700
       }
     }
     $fs: vr-fs($font-size, $scale, 0);
@@ -28,6 +26,14 @@
     html {
       font-size: $lh;
     }
+  }
+}
+
+
+@for $i from 1 to 7 {
+  h#{$i}, .h#{$i} {
+    font-family: $font-family-headers;
+    font-weight: 700
   }
 }
 

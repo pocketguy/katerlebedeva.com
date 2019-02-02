@@ -2,11 +2,15 @@
   <div>
     <h1
       class="header"
-    >{{ project.title }}</h1>
+    >
+      {{ project.title }}
+    </h1>
     <p
       v-if="project.description"
       class="description"
-    >{{ project.description }}</p>
+    >
+      {{ project.description }}
+    </p>
     <div
       :style="{gridTemplateColumns: `repeat(${project.grid.width || 1}, 1fr)`}"
       class="grid"
@@ -18,7 +22,7 @@
         class="grid-item"
       >
         <MyImage
-          fillParent
+          fill-parent
           :src="gridItem.img"
           target="_blank"
           :alt="gridItem.alt || $t('image of') + ' ' + project.title.toLowerCase()"
@@ -70,7 +74,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "~assets/scss/imports.scss";
+  @import "~/assets/scss/_imports.scss";
   .grid {
     display: block;
     grid-gap: 1rem;
@@ -95,6 +99,8 @@
     font-weight: 700
   }
   .description {
+    word-wrap: break-word;
+    word-break: break-word;
     @include for-size($tablet-portrait-up) {
       white-space: pre-line;
     }

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link
+  <NuxtLink
     :to="to || src"
     :target="target"
     :style="{height: fillParent? '100%': 'initial'}"
@@ -16,8 +16,8 @@
       :alt="alt || title"
       :style="{height: fillParent? '100%': 'initial', objectFit: fillParent? 'cover': 'initial'}"
       class="image"
-    />
-  </nuxt-link>
+    >
+  </NuxtLink>
 </template>
 
 <script>

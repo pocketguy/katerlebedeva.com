@@ -7,7 +7,7 @@ const locales = [
 ];
 
 
-const contents = fs.readFileSync('./projects/index.js', 'utf8');
+const contents = fs.readFileSync('./client/projects/index.js', 'utf8');
 const grep = contents.match(/slug: ['"](.*)['"]/ig);
 const slugs = grep.map(entry => entry.split(/['"]/)[1])
 const routes = locales.flatMap(locale => {
@@ -16,6 +16,7 @@ const routes = locales.flatMap(locale => {
 
 module.exports = {
   mode: 'universal',
+  srcDir: 'client/',
 
   /*
   ** Headers of the page
@@ -42,7 +43,7 @@ module.exports = {
   */
   css: [
     '~/assets/css/reset.css',
-    '~/assets/scss/main.scss',
+    '~/assets/scss/_main.scss',
     '~/assets/fonts/vladivostok/vladivostok.css',
     '~/assets/fonts/montserrat/montserrat.css',
   ],

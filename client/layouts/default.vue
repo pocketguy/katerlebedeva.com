@@ -1,25 +1,32 @@
 <template>
   <div class="page">
-    <TheHeading />
-    <nuxt />
-    <TheFooter />
+    <TheHeading @toggleOverlay="bodyHidden = !bodyHidden" />
+    <template v-if="!bodyHidden">
+      <Nuxt />
+      <TheFooter />
+    </template>
   </div>
 </template>
 
 <script>
-  import TheHeading from '~/components/TheHeading'
-  import TheFooter from '~/components/TheFooter'
+  import TheHeading from '~/components/TheHeading.vue'
+  import TheFooter from '~/components/TheFooter.vue'
 
   export default {
     components: {
       TheHeading,
       TheFooter
+    },
+    data() {
+      return {
+        bodyHidden: false
+      }
     }
   }
 </script>
 
 <style scoped lang="scss">
-  @import "~assets/scss/imports.scss";
+  @import "~/assets/scss/_imports.scss";
   .page {
     margin: auto;
     min-height: 100vh;
