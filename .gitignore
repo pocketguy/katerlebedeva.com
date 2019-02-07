@@ -80,6 +80,7 @@ public
 
 # IDE
 .idea
+.vscode
 
 sitemap.xml
 sw.*
