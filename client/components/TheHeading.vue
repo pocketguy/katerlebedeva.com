@@ -4,7 +4,7 @@
       v-if="overlayHidden"
       class="nav"
     >
-      <li class="nav-item mr-1 subheader">
+      <li class="nav-item subheader">
         <h1
           v-if="$route.path === localePath('index')"
           class="h3"
@@ -65,62 +65,29 @@
         </span>
       </li>
       <li class="nav-item tablet-portrait-down">
-        <button @click="toggleOverlay">
-          menu
-        </button>
+        <MyHamburger @click="toggleOverlay" />
       </li>
     </ul>
-    <div
-      v-else
-      class="overlay"
-    >
-      <ul class="nav col fs-3">
-        <li
-          @click="toggleOverlay"
-        >
-          <NuxtLink
-            :to="localePath('index')"
-            @click="toggleOverlay"
-          >
-            {{ $t('projects') }}
-          </NuxtLink>
-        </li>
-        <li
-          @click="toggleOverlay"
-        >
-          <NuxtLink
-            :to="localePath('about-me')"
-            @click="toggleOverlay"
-          >
-            {{ $t('about me') }}
-          </NuxtLink>
-        </li>
-        <li
-          @click="toggleOverlay"
-        >
-          <NuxtLink
-            :to="localePath('contacts')"
-          >
-            {{ $t('contacts') }}
-          </NuxtLink>
-        </li>
-      </ul>
-    </div>
   </header>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+import MyHamburger from '~/components/MyHamburger.vue'
+
 export default {
+  components: {
+    MyHamburger
+  },
   data() {
     return {
       overlayHidden: true
     }
   },
   methods: {
-    toggleOverlay() {
-      this.overlayHidden = !this.overlayHidden
-      this.$emit('toggleOverlay')
-    }
+    ...mapMutations({
+      toggleOverlay: 'layout/toggleOverlay'
+    })
   }
 }
 </script>

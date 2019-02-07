@@ -1,8 +1,8 @@
 {
-  "name": "kater",
+  "name": "katerlebedeva.com",
   "version": "1.0.0",
-  "description": "katerlebedeva portfolio",
-  "author": "Nikita Kulakov",
+  "description": "Portolio of Lebedeva Katya",
+  "author": "Nikita Kulakov <kul7nik@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
