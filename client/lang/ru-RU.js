@@ -1,8 +1,8 @@
 export default {
-  home: 'Домашняя страница',
-  typography: 'Типографика',
+  'home': 'Домашняя страница',
+  'typography': 'Типографика',
   'katya lebedeva': 'Катя Лебедева',
-  portfolio: 'Портфолио',
+  'portfolio': 'Портфолио',
   'image of': 'На изображении',
   'website description': 'Портфолио Лебедевой Екатерины',
   'projects': 'проекты',
