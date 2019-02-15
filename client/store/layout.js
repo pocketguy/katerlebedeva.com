@@ -4,6 +4,7 @@ export const state = () => ({
 
 export const mutations = {
     toggleOverlay(state) {
+        console.log('toggleOverlay')
         state.showOverlay = !state.showOverlay
     }
 }

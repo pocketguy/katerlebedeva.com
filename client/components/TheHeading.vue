@@ -65,7 +65,10 @@
         </span>
       </li>
       <li class="nav-item tablet-portrait-down">
-        <MyHamburger @click="toggleOverlay" />
+        <MyHamburger
+          class="ham"
+          @click="toggleOverlay"
+        />
       </li>
     </ul>
   </header>
@@ -164,5 +167,9 @@ export default {
   li {
     margin-bottom: 1rem
   }
+}
+
+.ham {
+  height: 20px
 }
 </style>
